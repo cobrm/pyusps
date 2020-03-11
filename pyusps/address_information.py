@@ -122,9 +122,9 @@ def _create_xml(
                 )
             )
 
-    for i,arg in enumerate(args):
+    for i, arg in enumerate(args):
         address = arg['address']
-        city = arg['city']
+        city = arg.get('city', None)
         state = arg.get('state', None)
         zip_code = arg.get('zip_code', None)
         address_extended = arg.get('address_extended', None)
@@ -142,16 +142,17 @@ def _create_xml(
             address_el.append(firm_name_el)
 
         address_1_el = etree.Element('Address1')
-        if address_extended is not None:
-            address_1_el.text = address_extended
+        address_1_el.text = address
         address_el.append(address_1_el)
 
         address_2_el = etree.Element('Address2')
-        address_2_el.text = address
+        if address_extended is not None:
+            address_2_el.text = address_extended
         address_el.append(address_2_el)
 
         city_el = etree.Element('City')
-        city_el.text = city
+        if city is not None:
+            city_el.text = city
         address_el.append(city_el)
 
         state_el = etree.Element('State')
