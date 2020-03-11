@@ -19,18 +19,18 @@ with open(path) as fp:
     long_description = fp.read()
 
 setup(
-    name='pyusps',
-    version='0.0.7',
-    description='pyusps -- Python bindings for the USPS Ecommerce APIs',
+    name='rmusps',
+    version='0.0.1',
+    description='rmusps -- Python bindings for the USPS Ecommerce APIs',
     long_description=long_description,
-    author='Andres Buritica',
-    author_email='andres@thelinuxkid.com',
-    maintainer='Andres Buritica',
-    maintainer_email='andres@thelinuxkid.com',
-    url='https://github.com/thelinuxkid/pyusps',
+    author='Christopher O\'Brien',
+    author_email='christopher.obrien@remindermedia.com',
+    maintainer='Christopher O\'Brien',
+    maintainer_email='christopher.obrien@remindermedia.com',
+    url='https://github.com/cobrm/pyusps',
     license='MIT',
     packages = find_packages(),
-    namespace_packages = ['pyusps'],
+    namespace_packages = ['rmusps'],
     test_suite='nose.collector',
     install_requires=[
         'setuptools>=0.6c11',
